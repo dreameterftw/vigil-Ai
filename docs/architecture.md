@@ -26,7 +26,7 @@ VIGIL uses a **Firebase-first architecture** to stay within zero budget while de
 
                                         +
 
-                              Base Sepolia Testnet
+                              Polygon Amoy Testnet
                                    (DealLock)
 ```
 
@@ -46,7 +46,7 @@ VIGIL uses a **Firebase-first architecture** to stay within zero budget while de
 ### Blockchain only for DealLock
 - On-chain: terms hash, timestamp, wallet addresses, stake, penalty, state
 - Off-chain (Firestore): readable deal details, case info, evidence, user data
-- Base Sepolia: free testnet, no real money
+- Polygon Amoy: free testnet, no real money
 
 ## Data Flow
 

@@ -6,9 +6,9 @@ import * as dotenv from "dotenv";
 dotenv.config({ path: "../../.env.local" });
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
-const BASE_SEPOLIA_RPC_URL =
-  process.env.NEXT_PUBLIC_BASE_SEPOLIA_RPC_URL ||
-  "https://sepolia.base.org";
+const POLYGON_AMOY_RPC_URL =
+  process.env.NEXT_PUBLIC_POLYGON_AMOY_RPC_URL ||
+  "https://rpc-amoy.polygon.technology";
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -28,9 +28,9 @@ const config: HardhatUserConfig = {
       url: "http://127.0.0.1:8545",
       chainId: 31337,
     },
-    baseSepolia: {
-      url: BASE_SEPOLIA_RPC_URL,
-      chainId: 84532,
+    polygonAmoy: {
+      url: POLYGON_AMOY_RPC_URL,
+      chainId: 80002,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
       gasPrice: "auto",
     },

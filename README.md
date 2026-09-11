@@ -18,7 +18,7 @@ OBSERVE → ANALYZE → QUANTIFY → PROTECT → RECOVER → OPTIMIZE
 | **Company Watchtower** | Verify counterparties via GSTIN / PAN / Bank evidence checklist |
 | **Scam Checker** | AI + rule-based analysis of suspicious messages, emails, invoices |
 | **Payment Risk** | Contextual risk for individual payments vs. monthly outflow |
-| **DealLock** | Blockchain-enforced B2B deal protection on Base Sepolia testnet |
+| **DealLock** | Blockchain-enforced B2B deal protection on Polygon Amoy testnet |
 | **Case Tracker** | Evidence-backed case management + Samadhaan complaint drafts |
 | **VIGIL Invest** | Educational capital allocation guidance adjusted for cyber risk |
 
@@ -33,7 +33,7 @@ OBSERVE → ANALYZE → QUANTIFY → PROTECT → RECOVER → OPTIMIZE
 | Database | Firestore |
 | Auth | Firebase Authentication |
 | AI | Groq (llama-3.3-70b-versatile) — free tier |
-| Blockchain | Solidity, Hardhat, Base Sepolia testnet |
+| Blockchain | Solidity, Hardhat, Polygon Amoy testnet |
 | Monorepo | pnpm workspaces |
 
 ---
@@ -71,7 +71,7 @@ VIGIL/
 - pnpm ≥ 8 — `npm install -g pnpm`
 - Firebase CLI — `npm install -g firebase-tools`
 - Java 11+ (required for Firebase emulators)
-- MetaMask browser extension (for DealLock)
+- A browser wallet that supports EIP-1193, such as Coinbase Wallet, Rabby, or Brave Wallet (for DealLock)
 
 ### Setup
 
@@ -112,7 +112,7 @@ pnpm blockchain:compile
 # Run tests (local Hardhat node — no wallet needed)
 pnpm blockchain:test
 
-# Deploy to Base Sepolia testnet
+# Deploy to Polygon Amoy testnet
 # Requires PRIVATE_KEY set in .env.local + testnet ETH in that wallet
 pnpm blockchain:deploy
 ```
@@ -127,11 +127,11 @@ Copy `.env.example` to `.env.local` and fill in:
 |---|---|
 | `NEXT_PUBLIC_FIREBASE_*` | Firebase Console → Project Settings → Your apps |
 | `GROQ_API_KEY` | console.groq.com/keys (free, no credit card) |
-| `PRIVATE_KEY` | Fresh MetaMask test wallet — never use a real wallet |
-| `NEXT_PUBLIC_BASE_SEPOLIA_RPC_URL` | Default: `https://sepolia.base.org` (free, no signup) |
+| `PRIVATE_KEY` | Fresh test wallet private key — never use a real wallet |
+| `NEXT_PUBLIC_POLYGON_AMOY_RPC_URL` | Default: `https://rpc-amoy.polygon.technology` (free, no signup) |
 | `NEXT_PUBLIC_DEALLOCK_CONTRACT_ADDRESS` | Output of `pnpm blockchain:deploy` |
 
-### Get free testnet ETH for Base Sepolia
+### Get free testnet POL for Polygon Amoy
 
 - Coinbase faucet: https://www.coinbase.com/faucets/base-ethereum-goerli-faucet
 - QuickNode faucet: https://faucet.quicknode.com/base/sepolia
@@ -142,7 +142,7 @@ Copy `.env.example` to `.env.local` and fill in:
 ## Demo Flow (5 minutes)
 
 1. **Verify counterparty** — Watchtower → Evidence Checklist (GSTIN/PAN/Bank)
-2. **Create protected deal** — DealLock → Terms hash → Base Sepolia proof → Basescan link
+2. **Create protected deal** — DealLock → Terms hash → Polygon Amoy proof → PolygonScan link
 3. **Simulate risk events** — Large payment + suspicious message → Risk 32 → 61 (live chart)
 4. **Simulate DealLock breach** — Penalty logic → on-chain proof
 5. **Case + recovery** — Evidence package + interest calculator + Samadhaan draft
@@ -170,6 +170,6 @@ This is a **hackathon prototype** demonstrating the concept.
 |---|---|
 | Dev 1 | Next.js dashboard + UI |
 | Dev 2 | Firebase Functions + Firestore |
-| Dev 3 | DealLock + Solidity + Base Sepolia |
+| Dev 3 | DealLock + Solidity + Polygon Amoy |
 | Dev 4 | Scam Checker + Groq AI integration |
 | Dev 5 | Watchtower + Risk Engine + VIGIL Invest |

@@ -2,7 +2,7 @@
 
 ## What It Does
 
-DealLock creates tamper-evident proof of B2B deal terms on Base Sepolia testnet
+DealLock creates tamper-evident proof of B2B deal terms on Polygon Amoy testnet
 and demonstrates automatic penalty enforcement via a smart contract.
 
 ## On-Chain vs Off-Chain
@@ -10,7 +10,7 @@ and demonstrates automatic penalty enforcement via a smart contract.
 | Layer | What's stored |
 |---|---|
 | **Firestore (off-chain)** | Readable deal details, seller name, description, status history |
-| **Base Sepolia (on-chain)** | Terms hash, wallet addresses, stake, penalty %, state, timestamps |
+| **Polygon Amoy (on-chain)** | Terms hash, wallet addresses, stake, penalty %, state, timestamps |
 
 ## Deal Flow
 
@@ -21,7 +21,7 @@ and demonstrates automatic penalty enforcement via a smart contract.
         ↓
 3. createDeal() called on DealLock contract (optional ETH stake)
         ↓
-4. Transaction confirmed on Base Sepolia → tx hash stored
+4. Transaction confirmed on Polygon Amoy → tx hash stored
         ↓
 5. Seller calls confirmDeal() → deal becomes Active
         ↓
@@ -40,12 +40,12 @@ Pending → Cancelled
 ## Deploying
 
 ```bash
-# 1. Get free testnet ETH on Base Sepolia
+# 1. Get free testnet POL on Polygon Amoy
 # Coinbase faucet:  https://www.coinbase.com/faucets/base-ethereum-goerli-faucet
 # QuickNode faucet: https://faucet.quicknode.com/base/sepolia
 # Alchemy faucet:   https://basefaucet.com/
 
-# 2. Set PRIVATE_KEY in .env.local (fresh MetaMask test wallet only)
+# 2. Set PRIVATE_KEY in .env.local (fresh test wallet only)
 
 # 3. Deploy
 pnpm blockchain:deploy
@@ -64,7 +64,7 @@ Tests cover: createDeal, confirmDeal, getDeal, penalty payout, stake return, com
 
 ## Important
 
-- **Testnet only** — Base Sepolia, no real money
+- **Testnet only** — Polygon Amoy, no real money
 - The terms hash is SHA-256 of the canonical JSON — tamper-evident
 - Even after a dispute, the original terms hash remains on-chain permanently
-- Transactions visible at: https://sepolia.basescan.org
+- Transactions visible at: https://amoy.polygonscan.com

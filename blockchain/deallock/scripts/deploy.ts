@@ -16,8 +16,8 @@ async function main() {
   console.log(`  Balance:  ${ethers.formatEther(balance)} ETH`);
   console.log("─────────────────────────────────────────");
 
-  if (networkName === "baseSepolia" && balance === 0n) {
-    console.error("❌ Deployer wallet has 0 ETH on Base Sepolia. Get free testnet ETH from:");
+  if (networkName === "polygonAmoy" && balance === 0n) {
+    console.error("❌ Deployer wallet has 0 POL on Polygon Amoy. Get free testnet POL from:");
     console.error("   https://www.coinbase.com/faucets/base-ethereum-goerli-faucet");
     console.error("   or: https://faucet.quicknode.com/base/sepolia");
     process.exit(1);
@@ -35,8 +35,8 @@ async function main() {
   console.log(`   Address: ${address}`);
   console.log(`   Tx hash: ${deployTx?.hash || "N/A"}`);
 
-  if (networkName === "baseSepolia") {
-    console.log(`   Explorer: https://sepolia.basescan.org/address/${address}`);
+  if (networkName === "polygonAmoy") {
+    console.log(`   Explorer: https://amoy.polygonscan.com/address/${address}`);
   }
 
   // ── Save deployment info ────────────────────────────────────
