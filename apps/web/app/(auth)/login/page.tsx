@@ -8,25 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertCircle } from "lucide-react";
+import { Shield, AlertCircle } from "lucide-react";
 import Link from "next/link";
-
-function VigilLogoMark({ className = "h-10 w-10" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 160 160" className={className} aria-label="VIGIL logo" role="img">
-      <defs>
-        <linearGradient id="vigil-login-mark" x1="0%" x2="100%" y1="0%" y2="100%">
-          <stop offset="0%" stopColor="#0f172a" />
-          <stop offset="55%" stopColor="#1d4ed8" />
-          <stop offset="100%" stopColor="#2563eb" />
-        </linearGradient>
-      </defs>
-      <polygon points="80,8 140,80 80,152 20,80" fill="url(#vigil-login-mark)" />
-      <rect x="68" y="18" width="24" height="124" rx="8" transform="rotate(45 80 80)" fill="white" opacity="0.95" />
-      <rect x="68" y="18" width="24" height="124" rx="8" transform="rotate(-45 80 80)" fill="white" opacity="0.95" />
-    </svg>
-  );
-}
 
 export default function LoginPage() {
   const router = useRouter();
@@ -68,16 +51,16 @@ export default function LoginPage() {
       <div className="w-full max-w-md space-y-6">
         {/* Logo */}
         <div className="text-center space-y-2">
-          <div className="flex items-center justify-center gap-3 rounded-full border border-slate-200 bg-white/90 px-4 py-2 shadow-lg shadow-blue-100/70 backdrop-blur-sm">
-            <VigilLogoMark className="h-11 w-11" />
-            <span className="text-3xl font-black tracking-[-0.08em] text-slate-950">VIGIL</span>
+          <div className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm backdrop-blur-sm">
+            <Shield className="h-10 w-10 text-vigil-500" />
+            <span className="text-3xl font-bold tracking-tight text-vigil-900">VIGIL</span>
           </div>
-          <p className="text-sm font-medium text-slate-600">
+          <p className="text-sm text-slate-600">
             Cyber Risk Intelligence for MSMEs
           </p>
         </div>
 
-        <Card className="border-slate-200/80 bg-white/90 shadow-[0_20px_50px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+        <Card className="border-slate-200/80 bg-white/85 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-sm">
           <CardHeader className="pb-4">
             <CardTitle className="text-2xl">Sign in</CardTitle>
             <CardDescription>
