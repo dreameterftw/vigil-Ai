@@ -118,7 +118,7 @@ contract DealLock {
      * @param _amount       Agreed deal value in wei (informational)
      * @param _termsHash    SHA-256 hash of the canonical terms JSON
      * @param _paymentDeadline Unix timestamp for payment deadline
-     * @param _penaltyPercent  Penalty percentage (1–50)
+     * @param _penaltyPercent  Penalty percentage (1-50)
      * @return dealId The new deal ID
      *
      * Caller may optionally send MATIC as stake (msg.value).
@@ -135,7 +135,7 @@ contract DealLock {
         require(_seller != msg.sender, "DealLock: Buyer and seller cannot be the same");
         require(_termsHash != bytes32(0), "DealLock: Terms hash required");
         require(_paymentDeadline > block.timestamp, "DealLock: Deadline must be in the future");
-        require(_penaltyPercent >= 1 && _penaltyPercent <= 50, "DealLock: Penalty 1–50%");
+        require(_penaltyPercent >= 1 && _penaltyPercent <= 50, "DealLock: Penalty 1-50%");
 
         dealId = ++_dealCounter;
 

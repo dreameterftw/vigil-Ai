@@ -66,7 +66,7 @@ describe("DealLock", function () {
         dealLock.connect(buyer).createDeal(
           seller.address, 0n, termsHash, futureDeadline(), 51
         )
-      ).to.be.revertedWith("DealLock: Penalty 1–50%");
+      ).to.be.revertedWith("DealLock: Penalty 1-50%");
     });
 
     it("should increment dealCounter", async () => {

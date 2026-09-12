@@ -78,21 +78,21 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-vigil-50 to-blue-50 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.12),transparent_35%),linear-gradient(135deg,#f8fafc_0%,#eef2ff_35%,#f8fafc_100%)] p-4">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center space-y-2">
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm backdrop-blur-sm">
             <Shield className="h-10 w-10 text-vigil-500" />
-            <span className="text-3xl font-bold text-vigil-900">VIGIL</span>
+            <span className="text-3xl font-bold tracking-tight text-vigil-900">VIGIL</span>
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-slate-600">
             Cyber Risk Intelligence for MSMEs
           </p>
         </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Create account</CardTitle>
+        <Card className="border-slate-200/80 bg-white/85 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-2xl">Create account</CardTitle>
             <CardDescription>
               Start monitoring your business cyber risk
             </CardDescription>

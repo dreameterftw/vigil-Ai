@@ -22,14 +22,15 @@ export const storage = getStorage(app);
 export const functions = getFunctions(app);
 
 // Connect to local emulators in development
-if (
-  process.env.NEXT_PUBLIC_APP_ENV === "development" &&
-  typeof window !== "undefined"
-) {
-  // Emulator ports match firebase.json
-  // connectAuthEmulator(auth, "http://localhost:9099", { disableWarnings: true });
-  // connectFirestoreEmulator(db, "localhost", 8080);
-  connectFunctionsEmulator(functions, "localhost", 5001);
-}
+// NOTE: Disabled — the app uses Next.js API routes (/api/*), not Firebase
+// callable functions. Enable these only when running `pnpm emulate`.
+// if (
+//   process.env.NEXT_PUBLIC_APP_ENV === "development" &&
+//   typeof window !== "undefined"
+// ) {
+//   connectAuthEmulator(auth, "http://localhost:9099", { disableWarnings: true });
+//   connectFirestoreEmulator(db, "localhost", 8080);
+//   connectFunctionsEmulator(functions, "localhost", 5001);
+// }
 
 export default app;

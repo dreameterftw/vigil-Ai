@@ -1,5 +1,9 @@
 {
   "buildCommand": "pnpm --filter @vigil/web build",
   "outputDirectory": "apps/web/.next",
-  "installCommand": "pnpm install --frozen-lockfile"
+  "installCommand": "npm i -g pnpm@9 && pnpm install",
+  "framework": "nextjs",
+  "env": {
+    "NPM_FLAGS": "--no-optional"
+  }
 }
