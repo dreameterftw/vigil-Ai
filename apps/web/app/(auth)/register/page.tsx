@@ -78,19 +78,19 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.12),transparent_35%),linear-gradient(135deg,#f8fafc_0%,#eef2ff_35%,#f8fafc_100%)] p-4">
+    <div className="min-h-screen flex items-center justify-center bg-[radial-gradient(circle_at_top,_rgba(232,93,38,0.16),transparent_35%),linear-gradient(135deg,#F5F0E8_0%,#fff_45%,#F5F0E8_100%)] p-4">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center space-y-2">
-          <div className="flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm backdrop-blur-sm">
-            <Shield className="h-10 w-10 text-vigil-500" />
-            <span className="text-3xl font-bold tracking-tight text-vigil-900">VIGIL</span>
+          <div className="flex items-center justify-center gap-2 rounded-full border border-[#1A1A18] bg-[#1A1A18] px-4 py-2 shadow-sm">
+            <Shield className="h-10 w-10 text-[#E85D26]" />
+            <span className="text-3xl font-bold tracking-tight text-[#F5F0E8]">VIGIL</span>
           </div>
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-[#1A1A18]/70">
             Cyber Risk Intelligence for MSMEs
           </p>
         </div>
 
-        <Card className="border-slate-200/80 bg-white/85 shadow-[0_18px_45px_rgba(15,23,42,0.08)] backdrop-blur-sm">
+        <Card className="border-[#1A1A18]/15 bg-white/90 shadow-[0_18px_45px_rgba(26,26,24,0.12)] backdrop-blur-sm">
           <CardHeader className="pb-4">
             <CardTitle className="text-2xl">Create account</CardTitle>
             <CardDescription>
@@ -148,14 +148,14 @@ export default function RegisterPage() {
                   minLength={6}
                 />
               </div>
-              <Button type="submit" className="w-full" disabled={loading}>
+              <Button type="submit" className="w-full bg-[#E85D26] text-white hover:bg-[#C44D1E]" disabled={loading}>
                 {loading ? "Creating account..." : "Create account"}
               </Button>
             </form>
 
             <p className="text-center text-sm text-muted-foreground mt-4">
               Already have an account?{" "}
-              <Link href="/login" className="text-primary hover:underline">
+              <Link href="/login" className="text-[#E85D26] hover:underline">
                 Sign in
               </Link>
             </p>
